@@ -1,12 +1,6 @@
-= Datasource via Fraction in WAR file
+Microservice powered by Wildfly Swarm and Camudna BPM
 
-> Please raise any issues found with this example in our JIRA:
-> https://issues.jboss.org/browse/SWARM
 
-This example demonstrates how to create a datasource through fraction
-configuration. It is exactly like the datasource-fraction example,
-except is uses `<packaging>war</packaging>` to demonstrate using a
-custom main with a WAR file.
+This example demonstrates how to bootstrap a microservice with Camunda BPM, Java EE and Wildfly Swarm.
 
-Refer to the datasource-fraction example readme for details of what
-the main is doing.
+Build with mvn install -PUberjar
