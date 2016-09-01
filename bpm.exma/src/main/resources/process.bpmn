@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.2.2">
+  <bpmn:collaboration id="Collaboration_0w5owro">
+    <bpmn:participant id="Participant_0s5uq3e" processRef="Process_0qksh50" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0qksh50" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_0c1lvv3">
+      <bpmn:outgoing>SequenceFlow_1vdduar</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="EndEvent_0kgz2pf">
+      <bpmn:incoming>SequenceFlow_1vdduar</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1vdduar" sourceRef="StartEvent_0c1lvv3" targetRef="EndEvent_0kgz2pf" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0w5owro">
+      <bpmndi:BPMNShape id="Participant_0s5uq3e_di" bpmnElement="Participant_0s5uq3e">
+        <dc:Bounds x="81.97005988023966" y="29.714071856287433" width="600" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_0c1lvv3_di" bpmnElement="StartEvent_0c1lvv3">
+        <dc:Bounds x="158.97005988023966" y="119.71407185628743" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="131.97005988023966" y="155.71407185628743" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0kgz2pf_di" bpmnElement="EndEvent_0kgz2pf">
+        <dc:Bounds x="297.97005988023966" y="120" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="270.97005988023966" y="156" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1vdduar_di" bpmnElement="SequenceFlow_1vdduar">
+        <di:waypoint xsi:type="dc:Point" x="195" y="138" />
+        <di:waypoint xsi:type="dc:Point" x="298" y="138" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="201.5" y="113" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
