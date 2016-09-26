@@ -7,9 +7,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.hrw</groupId>
-	<artifactId>camunda-swarm-jar</artifactId>
-	<version>0.0.1</version>
-	<packaging>jar</packaging>
+	<artifactId>camunda-swarm</artifactId>
+	<version>0.1.0</version>
 
 	<name>WildFly Swarm with embedded Process Engine</name>
 	<description>Example Wildfly Swarm Application with an embedded process engine by camunda</description>
@@ -61,11 +60,11 @@
 		<!-- Wildfly Swarm Fractions -->
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>bean-validation</artifactId>
+			<artifactId>cdi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>cdi</artifactId>
+			<artifactId>jsf</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
@@ -74,26 +73,6 @@
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
 			<artifactId>ejb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>hibernate-validator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>jaxrs</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>jaxrs-cdi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>jaxrs-jaxb</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>jaxrs-validator</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
@@ -110,10 +89,6 @@
 		<dependency>
 			<groupId>org.wildfly.swarm</groupId>
 			<artifactId>transactions</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.wildfly.swarm</groupId>
-			<artifactId>arquillian</artifactId>
 		</dependency>
 		<!-- Process Engine -->
 		<dependency>
@@ -132,7 +107,6 @@
 			<groupId>com.fasterxml.uuid</groupId>
 			<artifactId>java-uuid-generator</artifactId>
 		</dependency>
-
 		<!-- Database Drivers -->
 		<dependency>
 			<groupId>com.h2database</groupId>
