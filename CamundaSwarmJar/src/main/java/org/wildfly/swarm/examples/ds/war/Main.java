@@ -19,7 +19,7 @@ public class Main {
 		Container container = new Container();
 
 		// String useDB = System.getProperty("swarm.use.db", "postgres");
-		String useDB = "postgresql";
+		String useDB = "h2";
 
 		// Configure the Datasources subsystem with a driver
 		// and a datasource
@@ -47,8 +47,12 @@ public class Main {
 
 		deployment.addAsWebInfResource(new ClassLoaderAsset("META-INF/persistence.xml", Main.class.getClassLoader()),
 				"classes/META-INF/persistence.xml");
+
 		deployment.addAsWebInfResource(new ClassLoaderAsset("META-INF/processes.xml", Main.class.getClassLoader()),
 				"classes/META-INF/processes.xml");
+
+		deployment.addAsWebInfResource(new ClassLoaderAsset("process.bpmn", Main.class.getClassLoader()),
+				"classes/process.bpmn");
 
 		deployment.addAllDependencies();
 

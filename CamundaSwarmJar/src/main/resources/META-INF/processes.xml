@@ -2,12 +2,14 @@
 	xmlns="http://www.camunda.org/schema/1.0/ProcessApplication" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 	<process-engine name="default">
-		<configuration>org.camunda.bpm.engine.cdi.CdiJtaProcessEngineConfiguration</configuration>
+		<configuration>org.camunda.bpm.engine.impl.cfg.JtaProcessEngineConfiguration</configuration>
 		<datasource>java:jboss/datasources/ExampleDS</datasource>
 		<properties>
 			<property name="history">full</property>
 			<property name="transactionManagerJndiName">java:jboss/TransactionManager</property>
 			<property name="authorizationEnabled">false</property>
+			<property name="databaseSchemaUpdate">create-drop</property>
+			<property name="jobExecutorDeploymentAware">true</property>
 		</properties>
 	</process-engine>
 
@@ -20,3 +22,5 @@
 	</process-archive>
 
 </process-application>
+
+<!--  https://docs.camunda.org/manual/7.5/user-guide/process-applications/the-processes-xml-deployment-descriptor/ -->
