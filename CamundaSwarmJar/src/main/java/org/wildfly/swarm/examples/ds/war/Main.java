@@ -3,6 +3,7 @@ package org.wildfly.swarm.examples.ds.war;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.ClassLoaderAsset;
 import org.wildfly.swarm.Swarm;
+import org.wildfly.swarm.management.ManagementFraction;
 import org.wildfly.swarm.undertow.WARArchive;
 
 import de.hrw.bpm.app.ApproveOrderController;
@@ -14,7 +15,17 @@ public class Main {
 	public static void main(String[] args) throws Exception {
 
 		// Instantiate the swarm
-		Swarm swarm = new Swarm();
+		Swarm swarm = new Swarm()
+				.fraction(new ManagementFraction().createDefaultFraction().httpInterfaceManagementInterface((iface) -> {
+					iface.securityRealm("ManagementRealm");
+				}).securityRealm("ManagementRealm", (realm) -> {
+					realm.inMemoryAuthentication((authn) -> {
+						authn.add("bob", "tacos!", true);
+					});
+					realm.inMemoryAuthorization((authz) -> {
+						authz.add("bob", "admin");
+					});
+				}));
 
 		// Create deployment
 		WARArchive deployment = ShrinkWrap.create(WARArchive.class);

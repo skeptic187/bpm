@@ -90,6 +90,15 @@
 			<groupId>org.wildfly.swarm</groupId>
 			<artifactId>transactions</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>management</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.wildfly.swarm</groupId>
+			<artifactId>management-console</artifactId>
+		</dependency>
+
 		<!-- Process Engine -->
 		<dependency>
 			<groupId>org.camunda.bpm</groupId>
