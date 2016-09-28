@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpm-platform xmlns="http://www.camunda.org/schema/1.0/BpmPlatform"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.camunda.org/schema/1.0/BpmPlatform http://www.camunda.org/schema/1.0/BpmPlatform">
+
+	<job-executor>
+		<core-threads>3</core-threads>
+		<max-threads>5</max-threads>
+		<queue-length>10</queue-length>
+		<job-acquisitions>
+			<job-acquisition name="default">
+				<properties>
+					<property name="lockTimeInMillis">300000</property>
+					<property name="waitTimeInMillis">5000</property>
+					<property name="maxJobsPerAcquisition">3</property>
+				</properties>
+			</job-acquisition>
+		</job-acquisitions>
+	</job-executor>
+
+</bpm-platform>

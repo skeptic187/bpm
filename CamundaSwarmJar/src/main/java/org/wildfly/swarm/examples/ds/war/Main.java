@@ -30,18 +30,22 @@ public class Main {
 		// Create deployment
 		WARArchive deployment = ShrinkWrap.create(WARArchive.class);
 
-		// Add Classes
+		// Add Classes to classpath
 		deployment.addClasses(ApproveOrderController.class);
 		deployment.addClasses(OrderBusinessLogic.class);
 		deployment.addClasses(OrderEntity.class);
 
-		// Add WEB-INF Resources
+		// Add META-INF Resources as WEB-INF Resources
 		deployment.addAsWebInfResource(new ClassLoaderAsset("META-INF/persistence.xml", Main.class.getClassLoader()),
 				"classes/META-INF/persistence.xml");
 
 		deployment.addAsWebInfResource(new ClassLoaderAsset("META-INF/processes.xml", Main.class.getClassLoader()),
 				"classes/META-INF/processes.xml");
 
+		deployment.addAsWebInfResource(new ClassLoaderAsset("META-INF/bpm-platform.xml", Main.class.getClassLoader()),
+				"classes/META-INF/bpm-platform.xml");
+
+		// Add .bpmn-file as WEB-INF Resource
 		deployment.addAsWebInfResource(new ClassLoaderAsset("pizza-order.bpmn", Main.class.getClassLoader()),
 				"classes/pizza-order.bpmn");
 
@@ -50,6 +54,7 @@ public class Main {
 
 		// Start swarm
 		swarm.start();
+		
 		swarm.deploy(deployment);
 
 	}

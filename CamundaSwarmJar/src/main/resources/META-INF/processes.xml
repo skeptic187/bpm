@@ -11,6 +11,24 @@
 			<property name="databaseSchemaUpdate">create-drop</property>
 			<property name="jobExecutorDeploymentAware">true</property>
 		</properties>
+
+		<plugins>
+			<!-- plugin enabling Process Application event listener support -->
+			<plugin>
+				<class>org.camunda.bpm.application.impl.event.ProcessApplicationEventListenerPlugin</class>
+			</plugin>
+
+			<!-- plugin enabling integration of camunda Spin -->
+			<plugin>
+				<class>org.camunda.spin.plugin.impl.SpinProcessEnginePlugin</class>
+			</plugin>
+
+			<!-- plugin enabling connect support -->
+			<plugin>
+				<class>org.camunda.connect.plugin.impl.ConnectProcessEnginePlugin</class>
+			</plugin>
+
+		</plugins>
 	</process-engine>
 
 	<process-archive name="pizza-order">
@@ -23,4 +41,4 @@
 
 </process-application>
 
-<!--  https://docs.camunda.org/manual/7.5/user-guide/process-applications/the-processes-xml-deployment-descriptor/ -->
+<!-- https://docs.camunda.org/manual/7.5/user-guide/process-applications/the-processes-xml-deployment-descriptor/ -->
